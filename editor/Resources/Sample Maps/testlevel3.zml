@@ -1,0 +1,337 @@
+<level name="" author="" email="" datemodified="">
+   <material name="Specular black" type="SpecularBlack">
+      <color r="255" g="255" b="255" a="255" />
+      <specular r="255" g="255" b="255" s="255" />
+      <diffuse r="255" g="255" b="255" />
+      <emissive r="255" g="255" b="255" />
+      <texture file="textur.png" />
+   </material>
+   <block name="Block1" material="">
+      <size x="1" y="-1" z="6" />
+      <position x="-1" y="1" z="0" />
+   </block>
+   <block name="Block2" material="">
+      <size x="1" y="-2" z="6" />
+      <position x="0" y="2" z="0" />
+   </block>
+   <block name="Block3" material="">
+      <size x="1" y="-3" z="6" />
+      <position x="1" y="3" z="0" />
+   </block>
+   <block name="Block4" material="">
+      <size x="1" y="-2" z="6" />
+      <position x="2" y="4" z="0" />
+   </block>
+   <block name="Block5" material="">
+      <size x="-1" y="-2" z="6" />
+      <position x="4" y="5" z="0" />
+   </block>
+   <block name="Block6" material="">
+      <size x="1" y="-2" z="6" />
+      <position x="4" y="6" z="0" />
+   </block>
+   <block name="Block7" material="">
+      <size x="1" y="-2" z="6" />
+      <position x="5" y="7" z="0" />
+   </block>
+   <block name="Block8" material="">
+      <size x="1" y="-2" z="6" />
+      <position x="6" y="8" z="0" />
+   </block>
+   <block name="Block9" material="">
+      <size x="1" y="-2" z="6" />
+      <position x="7" y="9" z="0" />
+   </block>
+   <block name="Block10" material="">
+      <size x="1" y="-2" z="6" />
+      <position x="8" y="10" z="0" />
+   </block>
+   <block name="Block11" material="">
+      <size x="1" y="-2" z="6" />
+      <position x="9" y="11" z="0" />
+   </block>
+   <block name="Block12" material="">
+      <size x="66" y="-1" z="31" />
+      <position x="-32" y="0" z="0" />
+   </block>
+   <block name="Block13" material="">
+      <size x="24" y="1" z="-31" />
+      <position x="10" y="11" z="31" />
+   </block>
+   <block name="Block14" material="">
+      <size x="42" y="1" z="-25" />
+      <position x="-32" y="11" z="31" />
+   </block>
+   <block name="Block15" material="">
+      <size x="31" y="1" z="-6" />
+      <position x="-32" y="11" z="6" />
+   </block>
+   <block name="Block16" material="">
+      <size x="1" y="-25" z="14" />
+      <position x="-33" y="24" z="0" />
+   </block>
+   <block name="Block17" material="">
+      <size x="1" y="25" z="-14" />
+      <position x="34" y="-1" z="14" />
+   </block>
+   <block name="Block18" material="">
+      <size x="68" y="25" z="-1" />
+      <position x="-33" y="-1" z="0" />
+   </block>
+   <block name="Block19" material="">
+      <size x="68" y="25" z="-1" />
+      <position x="-33" y="-1" z="32" />
+   </block>
+   <block name="Block20" material="">
+      <size x="66" y="-1" z="31" />
+      <position x="-32" y="24" z="0" />
+   </block>
+   <block name="Block23" material="">
+      <size x="135" y="-1" z="94" />
+      <position x="-61" y="-1" z="-34" />
+   </block>
+   <block name="Block26" material="">
+      <size x="1" y="25" z="-13" />
+      <position x="34" y="-1" z="31" />
+   </block>
+   <block name="Block27" material="">
+      <size x="1" y="14" z="-4" />
+      <position x="34" y="10" z="18" />
+   </block>
+   <block name="Block33" material="">
+      <size x="1" y="-25" z="14" />
+      <position x="-33" y="24" z="18" />
+   </block>
+   <block name="Block34" material="">
+      <size x="-1" y="2" z="-4" />
+      <position x="-32" y="22" z="18" />
+   </block>
+   <block name="Block35" material="">
+      <size x="1" y="13" z="-4" />
+      <position x="-33" y="-1" z="18" />
+   </block>
+   <block name="Block36" material="">
+      <size x="6" y="-5" z="6" />
+      <position x="-24" y="29" z="13" />
+   </block>
+   <block name="Block37" material="">
+      <size x="5" y="-5" z="5" />
+      <position x="-14" y="29" z="14" />
+   </block>
+   <block name="Block38" material="">
+      <size x="10" y="-1" z="18" />
+      <position x="-43" y="12" z="7" />
+   </block>
+   <block name="Block39" material="">
+      <size x="1" y="-12" z="1" />
+      <position x="-42" y="11" z="8" />
+   </block>
+   <block name="Block40" material="">
+      <size x="1" y="-12" z="1" />
+      <position x="-42" y="11" z="23" />
+   </block>
+   <block name="Block41" material="">
+      <size x="9" y="-3" z="-1" />
+      <position x="-42" y="15" z="8" />
+   </block>
+   <block name="Block42" material="">
+      <size x="9" y="-2" z="1" />
+      <position x="-42" y="14" z="24" />
+   </block>
+   <block name="Block43" material="">
+      <size x="1" y="-3" z="18" />
+      <position x="-43" y="15" z="7" />
+   </block>
+   <block name="Block44" material="">
+      <size x="9" y="-1" z="-1" />
+      <position x="-42" y="17" z="25" />
+   </block>
+   <block name="Block46" material="">
+      <size x="9" y="-1" z="1" />
+      <position x="-42" y="17" z="7" />
+   </block>
+   <block name="Block47" material="">
+      <size x="1" y="-1" z="18" />
+      <position x="-43" y="17" z="7" />
+   </block>
+   <block name="Block48" material="">
+      <size x="1" y="-1" z="1" />
+      <position x="-43" y="16" z="24" />
+   </block>
+   <block name="Block49" material="">
+      <size x="1" y="-1" z="1" />
+      <position x="-43" y="16" z="7" />
+   </block>
+   <block name="Block50" material="">
+      <size x="133" y="5" z="-1" />
+      <position x="-60" y="-1" z="60" />
+   </block>
+   <block name="Block51" material="">
+      <size x="133" y="5" z="-1" />
+      <position x="-60" y="-1" z="-33" />
+   </block>
+   <block name="Block52" material="">
+      <size x="1" y="5" z="-94" />
+      <position x="73" y="-1" z="60" />
+   </block>
+   <block name="Block53" material="">
+      <size x="1" y="6" z="94" />
+      <position x="-61" y="-2" z="-34" />
+   </block>
+   <block name="Block1" material="">
+      <size x="2" y="1" z="-4" />
+      <position x="34" y="-1" z="18" />
+   </block>
+   <block name="Block2" material="">
+      <size x="4" y="-1" z="8" />
+      <position x="35" y="12" z="12" />
+   </block>
+   <block name="Block4" material="">
+      <size x="10" y="1" z="-18" />
+      <position x="-43" y="23" z="25" />
+   </block>
+   <block name="Block5" material="">
+      <size x="1" y="1" z="-4" />
+      <position x="-7" y="0" z="-1" />
+   </block>
+   <block name="Block6" material="">
+      <size x="1" y="2" z="-4" />
+      <position x="-6" y="0" z="-1" />
+   </block>
+   <block name="Block7" material="">
+      <size x="1" y="3" z="-4" />
+      <position x="-5" y="0" z="-1" />
+   </block>
+   <block name="Block8" material="">
+      <size x="1" y="4" z="-4" />
+      <position x="-4" y="0" z="-1" />
+   </block>
+   <block name="Block9" material="">
+      <size x="1" y="5" z="-4" />
+      <position x="-3" y="0" z="-1" />
+   </block>
+   <block name="Block10" material="">
+      <size x="1" y="6" z="-4" />
+      <position x="-2" y="0" z="-1" />
+   </block>
+   <block name="Block11" material="">
+      <size x="1" y="8" z="-4" />
+      <position x="0" y="0" z="-1" />
+   </block>
+   <block name="Block12" material="">
+      <size x="1" y="7" z="-4" />
+      <position x="-1" y="0" z="-1" />
+   </block>
+   <block name="Block13" material="">
+      <size x="1" y="9" z="-4" />
+      <position x="1" y="0" z="-1" />
+   </block>
+   <block name="Block14" material="">
+      <size x="1" y="10" z="-4" />
+      <position x="2" y="0" z="-1" />
+   </block>
+   <block name="Block15" material="">
+      <size x="1" y="11" z="-4" />
+      <position x="3" y="0" z="-1" />
+   </block>
+   <block name="Block16" material="">
+      <size x="1" y="12" z="-4" />
+      <position x="4" y="0" z="-1" />
+   </block>
+   <block name="Block17" material="">
+      <size x="1" y="13" z="-4" />
+      <position x="5" y="0" z="-1" />
+   </block>
+   <block name="Block18" material="">
+      <size x="1" y="14" z="-4" />
+      <position x="6" y="0" z="-1" />
+   </block>
+   <block name="Block19" material="">
+      <size x="1" y="15" z="-4" />
+      <position x="7" y="0" z="-1" />
+   </block>
+   <block name="Block20" material="">
+      <size x="1" y="16" z="-4" />
+      <position x="8" y="0" z="-1" />
+   </block>
+   <block name="Block21" material="">
+      <size x="1" y="17" z="-4" />
+      <position x="9" y="0" z="-1" />
+   </block>
+   <block name="Block22" material="">
+      <size x="0" y="1" z="0" />
+      <position x="10" y="0" z="-2" />
+   </block>
+   <block name="Block23" material="">
+      <size x="0" y="1" z="0" />
+      <position x="10" y="0" z="-2" />
+   </block>
+   <block name="Block24" material="">
+      <size x="1" y="18" z="-4" />
+      <position x="10" y="0" z="-1" />
+   </block>
+   <block name="Block25" material="">
+      <size x="0" y="1" z="0" />
+      <position x="-6" y="0" z="-3" />
+   </block>
+   <block name="Block27" material="">
+      <size x="-1" y="-19" z="4" />
+      <position x="12" y="19" z="-5" />
+   </block>
+   <block name="Block28" material="">
+      <size x="1" y="-20" z="-4" />
+      <position x="12" y="20" z="-1" />
+   </block>
+   <block name="Block29" material="">
+      <size x="1" y="-21" z="4" />
+      <position x="13" y="21" z="-5" />
+   </block>
+   <block name="Block30" material="">
+      <size x="1" y="-22" z="-4" />
+      <position x="14" y="22" z="-1" />
+   </block>
+   <block name="Block31" material="">
+      <size x="1" y="-23" z="-4" />
+      <position x="15" y="23" z="-1" />
+   </block>
+   <block name="Block32" material="">
+      <size x="6" y="-24" z="-5" />
+      <position x="16" y="24" z="-1" />
+   </block>
+   <block name="Block33" material="">
+      <size x="6" y="-4" z="1" />
+      <position x="16" y="28" z="-6" />
+   </block>
+   <block name="Block34" material="">
+      <size x="1" y="-4" z="4" />
+      <position x="21" y="28" z="-5" />
+   </block>
+   <block name="Block35" material="">
+      <size x="14" y="4" z="-1" />
+      <position x="21" y="24" z="0" />
+   </block>
+   <block name="Block36" material="">
+      <size x="-48" y="-4" z="1" />
+      <position x="16" y="28" z="-1" />
+   </block>
+   <block name="Block37" material="">
+      <size x="1" y="4" z="-31" />
+      <position x="34" y="24" z="31" />
+   </block>
+   <block name="Block38" material="">
+      <size x="67" y="-4" z="1" />
+      <position x="-32" y="28" z="31" />
+   </block>
+   <block name="Block39" material="">
+      <size x="1" y="4" z="-7" />
+      <position x="-33" y="24" z="32" />
+   </block>
+   <block name="Block40" material="">
+      <size x="1" y="4" z="-8" />
+      <position x="-33" y="24" z="7" />
+   </block>
+   <item name="Item2" type="playerStart">
+      <position x="54" y="2" z="16" />
+   </item>
+</level>
+

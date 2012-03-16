@@ -1,0 +1,507 @@
+//
+// UTILITY
+//
+
+gClientID <- 0;
+gPrevSnapshot <- {};
+gCurSnapshot <- {};
+
+class vec3
+{
+	x = 0;
+	y = 0;
+	z = 0;
+	
+	constructor()
+	{ }
+	constructor(_x, _y, _z)
+	{ x = _x; y = _y; z = _z; }
+
+	function _add(vec)
+	{ return vec3(x+vec.x, y+vec.y, z+vec.z); }
+	function _add(_x, _y, _z)
+	{ return vec3(x+_x, y+_y, z+_z); }
+
+	function _sub(vec)
+	{ return vec3(x-vec.x, y-vec.y, z-vec.z); }
+	function _sub(_x, _y, _z)
+	{ return vec3(x-_x, y-_y, z-_z); }
+
+	function _mul(f){ return vec3(x*f, y*f, z*f); }
+	
+	function length(){ return sqrt(x*x+y*y+z*z); }
+	
+	function normalize()
+	{
+		local len = length();
+		
+		x /= len;
+		y /= len;
+		z /= len;
+	}
+	
+	function dot(vec)
+	{
+		return x*vec.x + y*vec.y + z*vec.z;
+	}
+	
+	function Rotate(amount, x, y, z)
+	{
+		if(amount == 0.0)
+			return this;
+
+		local u = vec3(x, y, z);
+
+		u.normalize();
+
+		local rotMatrixRow0 = vec3(0, 0, 0);
+		local rotMatrixRow1 = vec3(0, 0, 0);
+		local rotMatrixRow2 = vec3(0, 0, 0);
+
+		local sinAngle = sin(PI * amount / 180);
+		local cosAngle = cos(PI * amount / 180);
+		local oneMinusCosAngle = 1.0 - cosAngle;
+
+		rotMatrixRow0.x=(u.x)*(u.x) + cosAngle*(1-(u.x)*(u.x));
+		rotMatrixRow0.y=(u.x)*(u.y)*(oneMinusCosAngle) - sinAngle*u.z;
+		rotMatrixRow0.z=(u.x)*(u.z)*(oneMinusCosAngle) + sinAngle*u.y;
+	
+		rotMatrixRow1.x=(u.x)*(u.y)*(oneMinusCosAngle) + sinAngle*u.z;
+		rotMatrixRow1.y=(u.y)*(u.y) + cosAngle*(1-(u.y)*(u.y));
+		rotMatrixRow1.z=(u.y)*(u.z)*(oneMinusCosAngle) - sinAngle*u.x;
+		
+		rotMatrixRow2.x=(u.x)*(u.z)*(oneMinusCosAngle) - sinAngle*u.y;
+		rotMatrixRow2.y=(u.y)*(u.z)*(oneMinusCosAngle) + sinAngle*u.x;
+		rotMatrixRow2.z=(u.z)*(u.z) + cosAngle*(1-(u.z)*(u.z));
+	
+		local new_vec = vec3( dot(rotMatrixRow0),
+							dot(rotMatrixRow1),
+							dot(rotMatrixRow2) );
+
+		return new_vec;
+	}
+}
+
+function lerp(s, d, a) { return s + (d - s) * a; }
+
+function random() { return rand()/RAND_MAX.tofloat(); }
+
+function dist(x0, y0, z0, x1, y1, z1)
+{
+	local dx = (x0-x1);
+	local dy = (y0-y1);
+	local dz = (z0-z1);
+	return sqrt(dx*dx+dy*dy+dz*dz);
+}
+
+
+//
+// ENTITY
+//
+class CEntity
+{
+	</ pack="int" /> id = null;
+
+	constructor()
+	{
+		id = netGetUniqueID();
+	}
+
+	function Camera()
+	{
+
+	}
+
+	function Snapshot(client_id)
+	{
+		foreach(member,val in this.getclass())
+		{
+			local attr;
+			if((attr = this.getclass().getattributes(member)) != null)
+			{
+				foreach(attrname,attrval in attr)
+				{
+					if(attrname == "pack")
+					{
+						if(attrval == "float")
+							netPackFloat(fetchvar(this, member));
+							
+						if(attrval == "int")
+							netPackInt(fetchvar(this, member));
+					}	
+				}
+			}
+		}
+	}
+
+	function Tick()
+	{
+	}
+
+	function Unpack(obj)
+	{
+		foreach(member,val in this)
+		{
+			local attr;
+			if((attr = this.getattributes(member)) != null)
+			{
+				foreach(attrname,attrval in attr)
+				{
+					if(attrname == "pack")
+					{
+						if(attrval == "float")
+							setvar(obj, member, netUnpackFloat());
+							
+						if(attrval == "int")
+							setvar(obj, member, netUnpackInt());
+					}
+				}
+			}
+		}
+	}
+	function Render()
+	{
+	}
+};
+
+class CWorld
+{
+	Entities = {};	
+
+	function Tick()
+	{
+		foreach(entity in Entities)
+			entity.Tick();
+	}
+	
+	function Snapshot(client)
+	{
+		netBeginObjectSnap(0, "ClientID");
+		netPackInt(Server.GetClientObject(client).id);
+		netEndObjectSnap();
+		
+		foreach(entity in Entities)
+		{
+			netBeginObjectSnap(entity.id, entity.classname);
+			entity.Snapshot(client);
+			netEndObjectSnap();
+		}
+	}
+
+	function AddEntity(entity)
+	{
+		if(!(entity.id in Entities))
+			Entities[entity.id] <- entity;
+	}
+	
+	function RemoveEntity(entity)
+	{
+		if(entity.id in Entities)
+			delete Entities[entity.id];
+	}
+	
+	function List()
+	{
+		print("Entities in world:");
+		foreach(entity in Entities)
+			print("Entity: " + entity.classname);
+	}
+	
+	function Render()
+	{
+		local amount = gInterpolation;
+		local attr;
+		
+		if(gClientID in gCurSnapshot)
+		{
+			local curcam = gCurSnapshot[gClientID];
+			local prevcam = gPrevSnapshot[gClientID];
+			local rendercam = clone curcam;
+			
+			local camclassobj = fetchvar(getroottable(), curcam.classname);
+			
+			if(camclassobj)
+			{
+				foreach(member,val in rendercam)
+				{
+					if((attr = camclassobj.getattributes(member)) != null)
+					{
+						foreach(attrname,attrval in attr)
+						{
+							if(attrname == "transform")
+							{
+								if(attrval == "lerp")
+								{
+									local source = fetchvar(prevcam, member);
+									local dest = fetchvar(curcam, member);
+									setvar(rendercam, member, lerp(source, dest, amount));
+								}
+							}
+						}
+					}
+				}
+			
+				camclassobj.Camera.call(rendercam);
+			}
+		}
+		
+		
+		
+		foreach(id, obj in gCurSnapshot)
+		{
+			local cur = obj;
+			local prev;
+			
+			if(id in gPrevSnapshot)
+				prev = gPrevSnapshot[id];
+			else
+				prev = cur;
+				
+			local renderobj = clone cur;
+
+			local classobj = fetchvar(getroottable(), obj.classname);
+			
+			if(!classobj) continue;
+			
+			foreach(member,val in renderobj)
+			{
+				if((attr = classobj.getattributes(member)) != null)
+				{
+					foreach(attrname,attrval in attr)
+					{
+						if(attrname == "transform")
+						{
+							if(attrval == "lerp")
+							{
+								local source = fetchvar(prev, member);
+								local dest = fetchvar(cur, member);
+								setvar(renderobj, member, lerp(source, dest, amount));
+							}
+						}
+					}
+				}
+			}
+			
+			classobj.Render.call(renderobj);
+		}
+	}
+		
+	/*function Render(objs)
+	{
+		//sysPrint("Rendering");
+		foreach(id, obj in objs)
+		{
+			//sysPrint("id: "+id.tostring()+"obj: "+obj+" ");
+
+			local classobj = fetchvar(getroottable(), obj.typename);
+			if(!classobj)
+				continue;
+
+			local renderobj = clone obj.cur;
+			local amount = obj.amount;
+		
+			// do interpolation. first fetch walk thru all members
+			foreach(member,val in renderobj)
+			{
+				// get attribs for member
+				local attr;
+				if(member in classobj)
+				{
+					if((attr = classobj.getattributes(member)) != null)
+					{
+						// walk thru all attributes
+						foreach(attrname,attrval in attr)
+						{
+							// does it have a transform attribute?
+							if(attrname == "transform")
+							{
+								if(attrval == "lerp")
+								{
+									// lerp transform
+									local source = fetchvar(obj.prev, member);
+									local dest = fetchvar(obj.cur, member);
+									setvar(renderobj, member, lerp(source, dest, amount));
+								}
+								//else if(attrval == "slerp")
+								//{
+									// slerp transform
+								//	local source = fetchvar(obj.prev, member);
+								//	local dest = fetchvar(obj.cur, member);
+								//	setvar(renderobj, member, slerp(source, dest, amount));
+								//}
+							}
+						}
+					}
+				}
+			}
+
+			// call the render function
+			classobj.Render.call(renderobj);
+		}
+	}*/
+};
+
+function PrintRootTable()
+{
+	local table = getroottable();
+
+	print("Root table");
+	print("----------------------------------------------");
+	foreach(key, val in table)
+	{
+		print(key + "\t\t\t" + val);
+	}
+}
+
+class CServer
+{
+	client_class_type = 0;
+	
+	Clients = {};
+	
+	constructor()
+	{
+	}
+	
+	function Init()
+	{
+	
+	}
+	
+	function PrecCache()
+	{
+	
+	}
+	
+	function Tick()
+	{
+		World.Tick();
+	}
+	
+	function Snapshot(client)
+	{
+		World.Snapshot(client);
+	}
+	
+	function ClientJoined(client)
+	{
+		print("Client joined: " + client);
+		
+		if(client_class_type != 0)
+		{
+			local newobj = client_class_type();
+			World.AddEntity(newobj);
+			Clients[client] <- newobj;
+		}
+		
+		World.List();
+	}
+	
+	function ClientLeft(client)
+	{
+		print("Client left: " + client);
+		
+		if(client_class_type != 0)
+		{
+			World.RemoveEntity(Clients[client]);
+			delete Clients[client];
+		}
+
+		World.List();
+	}
+	
+	function UnpackInput(client)
+	{
+		
+	}
+	
+	function SetClientObjectClass(obj)
+	{
+		client_class_type = obj;
+	}
+
+	function GetClientObject(client)
+	{
+		if(client in Clients)
+			return Clients[client];
+		return null;
+	}
+}
+
+class CClientSideObject
+{
+	id = 0;
+
+	function Render()
+	{
+
+	}
+};
+
+class CClient
+{
+	ClientObjectID = 1;
+	ClientObjects = {};
+	
+	function AddClientObject(obj)
+	{
+		obj.id = ClientObjectID;
+		ClientObjectID++;
+		ClientObjects[obj.id] <- obj;
+	}
+	
+	function RemoveClientObject(obj)
+	{
+		delete ClientObjects[obj.id];
+	}
+	
+	function Init()
+	{
+	}
+	
+	function PackInput()
+	{
+	}
+	
+	function Render()
+	{
+		World.Render();
+		
+		foreach(obj in ClientObjects)
+			obj.Render();
+	}
+	
+	function Unpack(object, classname)
+	{
+		if(classname == "ClientID")
+		{
+			gClientID = netUnpackInt();
+		}
+		else
+		{
+			local classobj = fetchvar(getroottable(), classname);
+		
+			if(!classobj)
+				return;
+			
+			//if(type(object) != type(classobj))
+			//	print("INTERNAL ERROR!");
+			
+			classobj.Unpack.call(classobj, object);
+		}
+	}
+}
+
+function ServerInit(){ Server.Init(); }
+function ServerClientJoined(client){ Server.ClientJoined(client); }
+function ServerClientLeft(client){ Server.ClientLeft(client); }
+function ServerUnpackInput(client){ Server.UnpackInput(client); }			
+function ServerSnapshot(client){ Server.Snapshot(client); }
+function ServerTick(){ Server.Tick(); }
+//function ServerDraw(){ World.Draw(); } // DEBUG
+
+function ClientInit(){ Client.Init(); }
+function ClientPackInput(){ Client.PackInput(); }
+function ClientRender(){ Client.Render(); }
+function ClientUnpack(object, classname){ Client.Unpack(object, classname); }
+function ClientUpdate(){ Client.Update(); }

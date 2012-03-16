@@ -1,0 +1,296 @@
+<level name="Zombie Slay Arena!" author="Robin Nilsson" email="robinnilsson@gmail.com" datemodified="2009-08-24">
+   <material name="Concrete" type="SpecularBlack">
+      <ambient r="0.5" g="0.5" b="0.5" a="1" />
+      <specular r="0.3" g="0.3" b="0.3" a="1" />
+      <diffuse r="-0.1" g="-0.1" b="-0.1" a="1.0" />
+      <emissive r="0" g="0" b="0" a="1.0" />
+      <shininess value="16" />
+      <texture file="" />
+   </material>
+   <material name="Dirt" type="">
+      <ambient r="0.3" g="0.2" b="0.1" a="1.0" />
+      <specular r="0.1" g="0.1" b="0.1" a="1.0" />
+      <diffuse r="0.3" g="0.3" b="0.3" a="1.0" />
+      <emissive r="0" g="0" b="0" a="1.0" />
+      <shininess value="5" />
+      <texture file="" />
+   </material>
+   <material name="Window" type="">
+      <ambient r="0.4" g="0.5" b="0.6" a="1" />
+      <specular r="1" g="1" b="1" a="1" />
+      <diffuse r="-0.3" g="-0.3" b="0" a="1" />
+      <emissive r="0" g="0" b="0" a="1" />
+      <shininess value="128" />
+      <texture file="" />
+   </material>
+   <material name="Ladder" type="">
+      <ambient r="0.1" g="0.1" b="0.2" a="1.0" />
+      <specular r="0.3" g="0.3" b="0.4" a="1.0" />
+      <diffuse r="0.3" g="0.3" b="0.2" a="1.0" />
+      <emissive r="0" g="0" b="0.3" a="1.0" />
+      <shininess value="64" />
+      <texture file="" />
+   </material>
+   <block name="Block0" material="Dirt">
+      <size x="188" y="-1" z="-98" />
+      <position x="-95" y="1" z="44" />
+   </block>
+   <block name="Block1" material="Concrete">
+      <size x="37" y="-23" z="13" />
+      <position x="-71" y="24" z="-29" />
+   </block>
+   <block name="Block2" material="Concrete">
+      <size x="39" y="1" z="-2" />
+      <position x="-72" y="24" z="-28" />
+   </block>
+   <block name="Block3" material="Concrete">
+      <size x="1" y="-5" z="14" />
+      <position x="-72" y="30" z="-30" />
+   </block>
+   <block name="Block5" material="Concrete">
+      <size x="37" y="5" z="-1" />
+      <position x="-71" y="25" z="-29" />
+   </block>
+   <block name="Block7" material="Concrete">
+      <size x="-1" y="-3" z="33" />
+      <position x="-33" y="28" z="-30" />
+   </block>
+   <block name="Block10" material="Concrete">
+      <size x="37" y="23" z="-12" />
+      <position x="-71" y="1" z="2" />
+   </block>
+   <block name="Block11" material="Concrete">
+      <size x="14" y="24" z="-6" />
+      <position x="-48" y="0" z="-10" />
+   </block>
+   <block name="Block13" material="Ladder">
+      <size x="1" y="-22" z="6" />
+      <position x="-49" y="23" z="-16" />
+   </block>
+   <block name="Block14" material="Ladder">
+      <size x="1" y="-21" z="6" />
+      <position x="-50" y="22" z="-16" />
+   </block>
+   <block name="Block15" material="Ladder">
+      <size x="1" y="-20" z="6" />
+      <position x="-51" y="21" z="-16" />
+   </block>
+   <block name="Block16" material="Ladder">
+      <size x="1" y="-19" z="6" />
+      <position x="-52" y="20" z="-16" />
+   </block>
+   <block name="Block17" material="Ladder">
+      <size x="1" y="-18" z="6" />
+      <position x="-53" y="19" z="-16" />
+   </block>
+   <block name="Block18" material="Ladder">
+      <size x="-1" y="-17" z="6" />
+      <position x="-53" y="18" z="-16" />
+   </block>
+   <block name="Block20" material="Ladder">
+      <size x="1" y="-16" z="6" />
+      <position x="-55" y="17" z="-16" />
+   </block>
+   <block name="Block21" material="Ladder">
+      <size x="1" y="-15" z="6" />
+      <position x="-56" y="16" z="-16" />
+   </block>
+   <block name="Block23" material="Ladder">
+      <size x="1" y="-14" z="6" />
+      <position x="-57" y="15" z="-16" />
+   </block>
+   <block name="Block24" material="Ladder">
+      <size x="1" y="-13" z="6" />
+      <position x="-58" y="14" z="-16" />
+   </block>
+   <block name="Block25" material="Ladder">
+      <size x="1" y="-12" z="6" />
+      <position x="-59" y="13" z="-16" />
+   </block>
+   <block name="Block26" material="Ladder">
+      <size x="1" y="-11" z="6" />
+      <position x="-60" y="12" z="-16" />
+   </block>
+   <block name="Block27" material="Ladder">
+      <size x="1" y="-10" z="6" />
+      <position x="-61" y="11" z="-16" />
+   </block>
+   <block name="Block28" material="Ladder">
+      <size x="1" y="-9" z="6" />
+      <position x="-62" y="10" z="-16" />
+   </block>
+   <block name="Block29" material="Ladder">
+      <size x="1" y="-8" z="6" />
+      <position x="-63" y="9" z="-16" />
+   </block>
+   <block name="Block30" material="Ladder">
+      <size x="-1" y="-7" z="-6" />
+      <position x="-63" y="8" z="-10" />
+   </block>
+   <block name="Block31" material="Ladder">
+      <size x="1" y="-6" z="6" />
+      <position x="-65" y="7" z="-16" />
+   </block>
+   <block name="Block32" material="Ladder">
+      <size x="1" y="-5" z="6" />
+      <position x="-66" y="6" z="-16" />
+   </block>
+   <block name="Block33" material="Ladder">
+      <size x="1" y="-4" z="6" />
+      <position x="-67" y="5" z="-16" />
+   </block>
+   <block name="Block34" material="Ladder">
+      <size x="1" y="-3" z="6" />
+      <position x="-68" y="4" z="-16" />
+   </block>
+   <block name="Block35" material="Ladder">
+      <size x="1" y="-2" z="6" />
+      <position x="-69" y="3" z="-16" />
+   </block>
+   <block name="Block36" material="Ladder">
+      <size x="1" y="-1" z="6" />
+      <position x="-70" y="2" z="-16" />
+   </block>
+   <block name="Block37" material="Concrete">
+      <size x="-2" y="1" z="29" />
+      <position x="-33" y="24" z="-28" />
+   </block>
+   <block name="Block39" material="Concrete">
+      <size x="38" y="5" z="-1" />
+      <position x="-72" y="25" z="3" />
+   </block>
+   <block name="Block40" material="Concrete">
+      <size x="-39" y="1" z="2" />
+      <position x="-33" y="24" z="1" />
+   </block>
+   <block name="Block41" material="Concrete">
+      <size x="2" y="1" z="-12" />
+      <position x="-72" y="24" z="-16" />
+   </block>
+   <block name="Block42" material="Concrete">
+      <size x="5" y="4" z="-55" />
+      <position x="-6" y="1" z="14" />
+   </block>
+   <block name="Block43" material="Concrete">
+      <size x="76" y="4" z="-4" />
+      <position x="-6" y="1" z="18" />
+   </block>
+   <block name="Block44" material="Concrete">
+      <size x="80" y="4" z="-4" />
+      <position x="-6" y="1" z="-41" />
+   </block>
+   <block name="Block45" material="Concrete">
+      <size x="4" y="4" z="-40" />
+      <position x="20" y="1" z="0" />
+   </block>
+   <block name="Block46" material="Concrete">
+      <size x="4" y="4" z="-39" />
+      <position x="39" y="1" z="14" />
+   </block>
+   <block name="Block47" material="Concrete">
+      <size x="4" y="4" z="40" />
+      <position x="55" y="1" z="-40" />
+   </block>
+   <block name="Block48" material="Concrete">
+      <size x="3" y="7" z="-11" />
+      <position x="8" y="1" z="-6" />
+   </block>
+   <block name="Block49" material="Ladder">
+      <size x="1" y="-3" z="6" />
+      <position x="-7" y="4" z="-16" />
+   </block>
+   <block name="Block50" material="Ladder">
+      <size x="1" y="-2" z="6" />
+      <position x="-8" y="3" z="-16" />
+   </block>
+   <block name="Block51" material="Ladder">
+      <size x="1" y="-1" z="6" />
+      <position x="-9" y="2" z="-16" />
+   </block>
+   <block name="Block52" material="Ladder">
+      <size x="20" y="-1" z="6" />
+      <position x="-29" y="2" z="-16" />
+   </block>
+   <block name="Block53" material="Ladder">
+      <size x="7" y="1" z="-26" />
+      <position x="-29" y="1" z="-16" />
+   </block>
+   <block name="Block54" material="Ladder">
+      <size x="-53" y="1" z="6" />
+      <position x="-29" y="1" z="-42" />
+   </block>
+   <block name="Block55" material="Ladder">
+      <size x="7" y="1" z="-26" />
+      <position x="-82" y="1" z="-10" />
+   </block>
+   <block name="Block56" material="Ladder">
+      <size x="5" y="1" z="-6" />
+      <position x="-75" y="1" z="-10" />
+   </block>
+   <block name="Block57" material="Ladder">
+      <size x="-1" y="3" z="-6" />
+      <position x="0" y="1" z="-10" />
+   </block>
+   <block name="Block58" material="Ladder">
+      <size x="-1" y="2" z="-6" />
+      <position x="1" y="1" z="-10" />
+   </block>
+   <block name="Block59" material="Ladder">
+      <size x="-1" y="1" z="-6" />
+      <position x="2" y="1" z="-10" />
+   </block>
+   <block name="Block60" material="Concrete">
+      <size x="5" y="4" z="-26" />
+      <position x="65" y="1" z="44" />
+   </block>
+   <block name="Block61" material="Concrete">
+      <size x="23" y="4" z="-5" />
+      <position x="70" y="1" z="44" />
+   </block>
+   <block name="Block62" material="Concrete">
+      <size x="5" y="4" z="-62" />
+      <position x="88" y="1" z="39" />
+   </block>
+   <block name="Block63" material="Concrete">
+      <size x="5" y="4" z="-31" />
+      <position x="88" y="1" z="-23" />
+   </block>
+   <block name="Block64" material="Concrete">
+      <size x="-14" y="4" z="4" />
+      <position x="88" y="1" z="-54" />
+   </block>
+   <block name="Block65" material="Concrete">
+      <size x="4" y="4" z="9" />
+      <position x="74" y="1" z="-50" />
+   </block>
+   <block name="Block66" material="Concrete">
+      <size x="1" y="5" z="12" />
+      <position x="-72" y="25" z="-10" />
+   </block>
+   <block name="Block67" material="Concrete">
+      <size x="2" y="-1" z="11" />
+      <position x="-72" y="25" z="-10" />
+   </block>
+   <item name="Item0" type="playerStart">
+      <position x="-65" y="0" z="-5" />
+   </item>
+   <item name="Item1" type="playerStart">
+      <position x="-65" y="0" z="-22" />
+   </item>
+   <item name="Item2" type="MachineGunPickup">
+      <position x="79" y="0" z="19" />
+   </item>
+   <item name="Item3" type="MachineGunPickup">
+      <position x="79" y="0" z="6" />
+   </item>
+   <item name="Item4" type="MachineGunPickup">
+      <position x="80" y="0" z="-8" />
+   </item>
+   <item name="Item5" type="MachineGunPickup">
+      <position x="79" y="0" z="-20" />
+   </item>
+   <item name="Item6" type="MachineGunPickup">
+      <position x="78" y="0" z="-32" />
+   </item>
+</level>
+

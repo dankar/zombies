@@ -1,0 +1,50 @@
+Name "GPME! Alpha"
+OutFile gpme_alpha_installer.exe
+XPStyle on
+ShowInstDetails show
+
+RequestExecutionLevel user
+
+InstallDir $PROGRAMFILES\GPME
+
+Page directory
+Page instfiles
+
+Section "GPME"
+  SetOutPath $INSTDIR
+  File "GPME!.exe"
+  File "GPME!.application"
+  File "GPME!.exe.manifest"
+  CreateDirectory "$INSTDIR\Sample Maps" 
+  SetOutPath "$INSTDIR\Sample Maps"
+  File "Sample Maps\testlevel.gpm"
+  CreateDirectory "$INSTDIR\Config" 
+  SetOutPath "$INSTDIR\Config"
+  File "Config\entities.xml"
+  SetOutPath "$INSTDIR\Config"
+  File "Config\materials.xml"
+  CreateDirectory "$SMPROGRAMS\GMPE" 
+  CreateShortCut $SMPROGRAMS\GPME\GPME.lnk $INSTDIR\GPME!.exe
+  CreateShortCut "$SMPROGRAMS\GPME\Uninstall GPME.lnk" "$INSTDIR\uninstaller.exe"
+  writeUninstaller $INSTDIR\uninstaller.exe
+SectionEnd
+
+UninstPage uninstConfirm
+UninstPage instfiles
+
+section "Uninstall"
+  delete $INSTDIR\uninstaller.exe
+  delete $INSTDIR\GPME!.exe
+  delete $INSTDIR\GPME!.application
+  delete $INSTDIR\GPME!.exe.manifest
+  delete "$INSTDIR\Sample Maps\testlevel.gpm"
+  delete "$INSTDIR\Sample Maps\"
+  delete "$INSTDIR\Config\entities.xml"
+  delete "$INSTDIR\Config\materials.xml"
+  delete "$INSTDIR\Config\"
+  delete "$INSTDIR\"
+  delete "$SMPROGRAMS\GPME\GPME.lnk"
+  delete "$SMPROGRAMS\GPME\Uninstall GPME.lnk"
+  delete "$SMPROGRAMS\GMPE" 
+
+sectionEnd

@@ -1,0 +1,952 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="math">
+      <UniqueIdentifier>{670dd86e-274a-4aa8-a93a-3055ddd6699c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libs">
+      <UniqueIdentifier>{580586a6-4d69-493f-ad82-eaed7f5656ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libs\opcode">
+      <UniqueIdentifier>{7919a5be-deff-4fc8-ac30-ebbec7864645}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libs\ode">
+      <UniqueIdentifier>{5a5f4bf7-f0c1-4392-ac7b-2ee8e97c9766}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libs\glfw">
+      <UniqueIdentifier>{15fd2804-e7de-4340-9291-3f2dc7d08d29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libs\glew">
+      <UniqueIdentifier>{5636912c-a50d-4586-bfb6-9518ad68e9dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libs\zlib">
+      <UniqueIdentifier>{e18f377e-0f75-484d-bf69-0e44aa287fa9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libs\png">
+      <UniqueIdentifier>{0d3a9daf-ada5-4d1d-93f4-2322befa24d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libs\scew">
+      <UniqueIdentifier>{20cfe375-e304-4ea8-b0e7-f3a2fe9e7a54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libs\expat">
+      <UniqueIdentifier>{1083ef50-d7b6-4b22-b604-3b01826c7604}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video">
+      <UniqueIdentifier>{71c057d1-4c0f-4ac2-a549-0c4f94881f00}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\math\matrix.cpp">
+      <Filter>math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\math\vector.cpp">
+      <Filter>math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\opcode\Ice\IceAABB.cpp">
+      <Filter>libs\opcode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\opcode\Ice\IceContainer.cpp">
+      <Filter>libs\opcode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\opcode\Ice\IceHPoint.cpp">
+      <Filter>libs\opcode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\opcode\Ice\IceIndexedTriangle.cpp">
+      <Filter>libs\opcode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\opcode\Ice\IceMatrix3x3.cpp">
+      <Filter>libs\opcode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\opcode\Ice\IceMatrix4x4.cpp">
+      <Filter>libs\opcode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\opcode\Ice\IceOBB.cpp">
+      <Filter>libs\opcode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\opcode\Ice\IcePlane.cpp">
+      <Filter>libs\opcode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\opcode\Ice\IcePoint.cpp">
+      <Filter>libs\opcode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\opcode\Ice\IceRandom.cpp">
+      <Filter>libs\opcode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\opcode\Ice\IceRay.cpp">
+      <Filter>libs\opcode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\opcode\Ice\IceRevisitedRadix.cpp">
+      <Filter>libs\opcode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\opcode\Ice\IceSegment.cpp">
+      <Filter>libs\opcode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\opcode\Ice\IceTriangle.cpp">
+      <Filter>libs\opcode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\opcode\Ice\IceUtils.cpp">
+      <Filter>libs\opcode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\opcode\OPC_AABBCollider.cpp">
+      <Filter>libs\opcode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\opcode\OPC_AABBTree.cpp">
+      <Filter>libs\opcode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\opcode\OPC_BaseModel.cpp">
+      <Filter>libs\opcode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\opcode\OPC_BoxPruning.cpp">
+      <Filter>libs\opcode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\opcode\OPC_Collider.cpp">
+      <Filter>libs\opcode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\opcode\OPC_Common.cpp">
+      <Filter>libs\opcode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\opcode\OPC_HybridModel.cpp">
+      <Filter>libs\opcode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\opcode\OPC_LSSCollider.cpp">
+      <Filter>libs\opcode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\opcode\OPC_MeshInterface.cpp">
+      <Filter>libs\opcode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\opcode\OPC_Model.cpp">
+      <Filter>libs\opcode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\opcode\OPC_OBBCollider.cpp">
+      <Filter>libs\opcode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\opcode\OPC_OptimizedTree.cpp">
+      <Filter>libs\opcode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\opcode\OPC_Picking.cpp">
+      <Filter>libs\opcode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\opcode\OPC_PlanesCollider.cpp">
+      <Filter>libs\opcode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\opcode\OPC_RayCollider.cpp">
+      <Filter>libs\opcode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\opcode\OPC_SphereCollider.cpp">
+      <Filter>libs\opcode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\opcode\OPC_SweepAndPrune.cpp">
+      <Filter>libs\opcode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\opcode\OPC_TreeBuilders.cpp">
+      <Filter>libs\opcode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\opcode\OPC_TreeCollider.cpp">
+      <Filter>libs\opcode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\opcode\OPC_VolumeCollider.cpp">
+      <Filter>libs\opcode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\opcode\Opcode.cpp">
+      <Filter>libs\opcode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\ode\array.cpp">
+      <Filter>libs\ode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\ode\box.cpp">
+      <Filter>libs\ode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\ode\capsule.cpp">
+      <Filter>libs\ode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\ode\collision_cylinder_box.cpp">
+      <Filter>libs\ode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\ode\collision_cylinder_plane.cpp">
+      <Filter>libs\ode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\ode\collision_cylinder_sphere.cpp">
+      <Filter>libs\ode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\ode\collision_cylinder_trimesh.cpp">
+      <Filter>libs\ode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\ode\collision_kernel.cpp">
+      <Filter>libs\ode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\ode\collision_quadtreespace.cpp">
+      <Filter>libs\ode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\ode\collision_space.cpp">
+      <Filter>libs\ode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\ode\collision_transform.cpp">
+      <Filter>libs\ode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\ode\collision_trimesh_box.cpp">
+      <Filter>libs\ode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\ode\collision_trimesh_ccylinder.cpp">
+      <Filter>libs\ode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\ode\collision_trimesh_distance.cpp">
+      <Filter>libs\ode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\ode\collision_trimesh_gimpact.cpp">
+      <Filter>libs\ode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\ode\collision_trimesh_opcode.cpp">
+      <Filter>libs\ode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\ode\collision_trimesh_plane.cpp">
+      <Filter>libs\ode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\ode\collision_trimesh_ray.cpp">
+      <Filter>libs\ode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\ode\collision_trimesh_sphere.cpp">
+      <Filter>libs\ode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\ode\collision_trimesh_trimesh.cpp">
+      <Filter>libs\ode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\ode\collision_util.cpp">
+      <Filter>libs\ode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\ode\convex.cpp">
+      <Filter>libs\ode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\ode\cylinder.cpp">
+      <Filter>libs\ode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\ode\error.cpp">
+      <Filter>libs\ode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\ode\export-dif.cpp">
+      <Filter>libs\ode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\ode\fastdot.c">
+      <Filter>libs\ode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\ode\fastldlt.c">
+      <Filter>libs\ode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\ode\fastlsolve.c">
+      <Filter>libs\ode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\ode\fastltsolve.c">
+      <Filter>libs\ode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\ode\heightfield.cpp">
+      <Filter>libs\ode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\ode\joint.cpp">
+      <Filter>libs\ode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\ode\lcp.cpp">
+      <Filter>libs\ode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\ode\mass.cpp">
+      <Filter>libs\ode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\ode\mat.cpp">
+      <Filter>libs\ode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\ode\matrix.cpp">
+      <Filter>libs\ode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\ode\memory.cpp">
+      <Filter>libs\ode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\ode\misc.cpp">
+      <Filter>libs\ode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\ode\obstack.cpp">
+      <Filter>libs\ode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\ode\ode.cpp">
+      <Filter>libs\ode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\ode\odemath.cpp">
+      <Filter>libs\ode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\ode\plane.cpp">
+      <Filter>libs\ode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\ode\quickstep.cpp">
+      <Filter>libs\ode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\ode\ray.cpp">
+      <Filter>libs\ode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\ode\rotation.cpp">
+      <Filter>libs\ode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\ode\sphere.cpp">
+      <Filter>libs\ode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\ode\step.cpp">
+      <Filter>libs\ode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\ode\stepfast.cpp">
+      <Filter>libs\ode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\ode\testing.cpp">
+      <Filter>libs\ode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\ode\timer.cpp">
+      <Filter>libs\ode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\ode\util.cpp">
+      <Filter>libs\ode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\glfw\enable.c">
+      <Filter>libs\glfw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\glfw\fullscreen.c">
+      <Filter>libs\glfw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\glfw\glext.c">
+      <Filter>libs\glfw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\glfw\image.c">
+      <Filter>libs\glfw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\glfw\init.c">
+      <Filter>libs\glfw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\glfw\input.c">
+      <Filter>libs\glfw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\glfw\joystick.c">
+      <Filter>libs\glfw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\glfw\tga.c">
+      <Filter>libs\glfw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\glfw\thread.c">
+      <Filter>libs\glfw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\glfw\time.c">
+      <Filter>libs\glfw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\glfw\win32\win32_dllmain.c">
+      <Filter>libs\glfw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\glfw\win32\win32_enable.c">
+      <Filter>libs\glfw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\glfw\win32\win32_fullscreen.c">
+      <Filter>libs\glfw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\glfw\win32\win32_glext.c">
+      <Filter>libs\glfw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\glfw\win32\win32_init.c">
+      <Filter>libs\glfw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\glfw\win32\win32_joystick.c">
+      <Filter>libs\glfw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\glfw\win32\win32_thread.c">
+      <Filter>libs\glfw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\glfw\win32\win32_time.c">
+      <Filter>libs\glfw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\glfw\win32\win32_window.c">
+      <Filter>libs\glfw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\glfw\window.c">
+      <Filter>libs\glfw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\glew\glew.c">
+      <Filter>libs\glew</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\zlib\adler32.c">
+      <Filter>libs\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\zlib\compress.c">
+      <Filter>libs\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\zlib\crc32.c">
+      <Filter>libs\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\zlib\deflate.c">
+      <Filter>libs\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\zlib\gzio.c">
+      <Filter>libs\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\zlib\infback.c">
+      <Filter>libs\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\zlib\inffast.c">
+      <Filter>libs\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\zlib\inflate.c">
+      <Filter>libs\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\zlib\inftrees.c">
+      <Filter>libs\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\zlib\trees.c">
+      <Filter>libs\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\zlib\uncompr.c">
+      <Filter>libs\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\zlib\zutil.c">
+      <Filter>libs\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\png\png.c">
+      <Filter>libs\png</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\png\pngerror.c">
+      <Filter>libs\png</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\png\pnggccrd.c">
+      <Filter>libs\png</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\png\pngget.c">
+      <Filter>libs\png</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\png\pngmem.c">
+      <Filter>libs\png</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\png\pngpread.c">
+      <Filter>libs\png</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\png\pngread.c">
+      <Filter>libs\png</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\png\pngrio.c">
+      <Filter>libs\png</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\png\pngrtran.c">
+      <Filter>libs\png</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\png\pngrutil.c">
+      <Filter>libs\png</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\png\pngset.c">
+      <Filter>libs\png</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\png\pngtrans.c">
+      <Filter>libs\png</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\png\pngvcrd.c">
+      <Filter>libs\png</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\png\pngwio.c">
+      <Filter>libs\png</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\png\pngwrite.c">
+      <Filter>libs\png</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\png\pngwtran.c">
+      <Filter>libs\png</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\png\pngwutil.c">
+      <Filter>libs\png</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\scew\attribute.c">
+      <Filter>libs\scew</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\scew\element.c">
+      <Filter>libs\scew</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\scew\error.c">
+      <Filter>libs\scew</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\scew\parser.c">
+      <Filter>libs\scew</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\scew\str.c">
+      <Filter>libs\scew</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\scew\tree.c">
+      <Filter>libs\scew</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\scew\writer.c">
+      <Filter>libs\scew</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\scew\xattribute.c">
+      <Filter>libs\scew</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\scew\xerror.c">
+      <Filter>libs\scew</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\scew\xhandler.c">
+      <Filter>libs\scew</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\scew\xparser.c">
+      <Filter>libs\scew</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\scew\xprint.c">
+      <Filter>libs\scew</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\expat\xmlparse.c">
+      <Filter>libs\expat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\expat\xmlrole.c">
+      <Filter>libs\expat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\expat\xmltok.c">
+      <Filter>libs\expat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\expat\xmltok_impl.c">
+      <Filter>libs\expat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\expat\xmltok_ns.c">
+      <Filter>libs\expat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\video\camera.cpp">
+      <Filter>video</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\video\console.cpp">
+      <Filter>video</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\video\font.cpp">
+      <Filter>video</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\video\heightmap.cpp">
+      <Filter>video</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\video\model.cpp">
+      <Filter>video</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\video\png.cpp">
+      <Filter>video</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\video\shader.cpp">
+      <Filter>video</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\video\texture.cpp">
+      <Filter>video</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\video\video.cpp">
+      <Filter>video</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\input.cpp" />
+    <ClCompile Include="..\src\interface.cpp" />
+    <ClCompile Include="..\src\level.cpp" />
+    <ClCompile Include="..\src\log.cpp" />
+    <ClCompile Include="..\src\main.cpp" />
+    <ClCompile Include="..\src\resourcehandler.cpp" />
+    <ClCompile Include="..\src\socket.cpp" />
+    <ClCompile Include="..\src\timer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\math\matrix.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\math\vector.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\opcode\Ice\IceAABB.h">
+      <Filter>libs\opcode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\opcode\Ice\IceAxes.h">
+      <Filter>libs\opcode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\opcode\Ice\IceBoundingSphere.h">
+      <Filter>libs\opcode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\opcode\Ice\IceContainer.h">
+      <Filter>libs\opcode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\opcode\Ice\IceFPU.h">
+      <Filter>libs\opcode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\opcode\Ice\IceHPoint.h">
+      <Filter>libs\opcode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\opcode\Ice\IceIndexedTriangle.h">
+      <Filter>libs\opcode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\opcode\Ice\IceLSS.h">
+      <Filter>libs\opcode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\opcode\Ice\IceMatrix3x3.h">
+      <Filter>libs\opcode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\opcode\Ice\IceMatrix4x4.h">
+      <Filter>libs\opcode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\opcode\Ice\IceMemoryMacros.h">
+      <Filter>libs\opcode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\opcode\Ice\IceOBB.h">
+      <Filter>libs\opcode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\opcode\Ice\IcePairs.h">
+      <Filter>libs\opcode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\opcode\Ice\IcePlane.h">
+      <Filter>libs\opcode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\opcode\Ice\IcePoint.h">
+      <Filter>libs\opcode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\opcode\Ice\IcePreprocessor.h">
+      <Filter>libs\opcode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\opcode\Ice\IceRandom.h">
+      <Filter>libs\opcode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\opcode\Ice\IceRay.h">
+      <Filter>libs\opcode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\opcode\Ice\IceRevisitedRadix.h">
+      <Filter>libs\opcode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\opcode\Ice\IceSegment.h">
+      <Filter>libs\opcode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\opcode\Ice\IceTriangle.h">
+      <Filter>libs\opcode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\opcode\Ice\IceTriList.h">
+      <Filter>libs\opcode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\opcode\Ice\IceTypes.h">
+      <Filter>libs\opcode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\opcode\Ice\IceUtils.h">
+      <Filter>libs\opcode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\opcode\OPC_AABBCollider.h">
+      <Filter>libs\opcode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\opcode\OPC_AABBTree.h">
+      <Filter>libs\opcode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\opcode\OPC_BaseModel.h">
+      <Filter>libs\opcode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\opcode\OPC_BoxBoxOverlap.h">
+      <Filter>libs\opcode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\opcode\OPC_BoxPruning.h">
+      <Filter>libs\opcode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\opcode\OPC_Collider.h">
+      <Filter>libs\opcode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\opcode\OPC_Common.h">
+      <Filter>libs\opcode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\opcode\OPC_HybridModel.h">
+      <Filter>libs\opcode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\opcode\OPC_IceHook.h">
+      <Filter>libs\opcode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\opcode\OPC_LSSAABBOverlap.h">
+      <Filter>libs\opcode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\opcode\OPC_LSSCollider.h">
+      <Filter>libs\opcode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\opcode\OPC_LSSTriOverlap.h">
+      <Filter>libs\opcode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\opcode\OPC_MeshInterface.h">
+      <Filter>libs\opcode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\opcode\OPC_Model.h">
+      <Filter>libs\opcode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\opcode\OPC_OBBCollider.h">
+      <Filter>libs\opcode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\opcode\OPC_OptimizedTree.h">
+      <Filter>libs\opcode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\opcode\OPC_Picking.h">
+      <Filter>libs\opcode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\opcode\OPC_PlanesAABBOverlap.h">
+      <Filter>libs\opcode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\opcode\OPC_PlanesCollider.h">
+      <Filter>libs\opcode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\opcode\OPC_PlanesTriOverlap.h">
+      <Filter>libs\opcode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\opcode\OPC_RayAABBOverlap.h">
+      <Filter>libs\opcode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\opcode\OPC_RayCollider.h">
+      <Filter>libs\opcode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\opcode\OPC_RayTriOverlap.h">
+      <Filter>libs\opcode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\opcode\OPC_Settings.h">
+      <Filter>libs\opcode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\opcode\OPC_SphereAABBOverlap.h">
+      <Filter>libs\opcode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\opcode\OPC_SphereCollider.h">
+      <Filter>libs\opcode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\opcode\OPC_SphereTriOverlap.h">
+      <Filter>libs\opcode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\opcode\OPC_SweepAndPrune.h">
+      <Filter>libs\opcode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\opcode\OPC_TreeBuilders.h">
+      <Filter>libs\opcode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\opcode\OPC_TreeCollider.h">
+      <Filter>libs\opcode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\opcode\OPC_TriBoxOverlap.h">
+      <Filter>libs\opcode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\opcode\OPC_TriTriOverlap.h">
+      <Filter>libs\opcode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\opcode\OPC_VolumeCollider.h">
+      <Filter>libs\opcode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\opcode\Opcode.h">
+      <Filter>libs\opcode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\ode\array.h">
+      <Filter>libs\ode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\ode\collision_kernel.h">
+      <Filter>libs\ode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\ode\collision_space_internal.h">
+      <Filter>libs\ode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\ode\collision_std.h">
+      <Filter>libs\ode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\ode\collision_transform.h">
+      <Filter>libs\ode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\ode\collision_trimesh_internal.h">
+      <Filter>libs\ode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\ode\collision_util.h">
+      <Filter>libs\ode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\ode\heightfield.h">
+      <Filter>libs\ode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\ode\joint.h">
+      <Filter>libs\ode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\ode\lcp.h">
+      <Filter>libs\ode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\ode\mat.h">
+      <Filter>libs\ode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\ode\objects.h">
+      <Filter>libs\ode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\ode\obstack.h">
+      <Filter>libs\ode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\ode\quickstep.h">
+      <Filter>libs\ode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\ode\stack.h">
+      <Filter>libs\ode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\ode\step.h">
+      <Filter>libs\ode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\ode\testing.h">
+      <Filter>libs\ode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\ode\util.h">
+      <Filter>libs\ode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\glfw\glfw.h">
+      <Filter>libs\glfw</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\glfw\internal.h">
+      <Filter>libs\glfw</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\glfw\win32\platform.h">
+      <Filter>libs\glfw</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\zlib\crc32.h">
+      <Filter>libs\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\zlib\deflate.h">
+      <Filter>libs\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\zlib\inffast.h">
+      <Filter>libs\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\zlib\inffixed.h">
+      <Filter>libs\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\zlib\inflate.h">
+      <Filter>libs\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\zlib\inftrees.h">
+      <Filter>libs\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\zlib\trees.h">
+      <Filter>libs\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\zlib\zconf.h">
+      <Filter>libs\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\zlib\zconf.in.h">
+      <Filter>libs\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\zlib\zlib.h">
+      <Filter>libs\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\zlib\zutil.h">
+      <Filter>libs\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\png\png.h">
+      <Filter>libs\png</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\png\pngconf.h">
+      <Filter>libs\png</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\scew\attribute.h">
+      <Filter>libs\scew</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\scew\element.h">
+      <Filter>libs\scew</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\scew\error.h">
+      <Filter>libs\scew</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\scew\parser.h">
+      <Filter>libs\scew</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\scew\scew.h">
+      <Filter>libs\scew</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\scew\str.h">
+      <Filter>libs\scew</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\scew\tree.h">
+      <Filter>libs\scew</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\scew\types.h">
+      <Filter>libs\scew</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\scew\writer.h">
+      <Filter>libs\scew</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\scew\xattribute.h">
+      <Filter>libs\scew</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\scew\xelement.h">
+      <Filter>libs\scew</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\scew\xerror.h">
+      <Filter>libs\scew</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\scew\xhandler.h">
+      <Filter>libs\scew</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\scew\xparser.h">
+      <Filter>libs\scew</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\scew\xprint.h">
+      <Filter>libs\scew</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\scew\xtree.h">
+      <Filter>libs\scew</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\expat\amigaconfig.h">
+      <Filter>libs\expat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\expat\ascii.h">
+      <Filter>libs\expat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\expat\asciitab.h">
+      <Filter>libs\expat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\expat\expat.h">
+      <Filter>libs\expat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\expat\expat_external.h">
+      <Filter>libs\expat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\expat\iasciitab.h">
+      <Filter>libs\expat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\expat\internal.h">
+      <Filter>libs\expat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\expat\latin1tab.h">
+      <Filter>libs\expat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\expat\macconfig.h">
+      <Filter>libs\expat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\expat\nametab.h">
+      <Filter>libs\expat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\expat\utf8tab.h">
+      <Filter>libs\expat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\expat\winconfig.h">
+      <Filter>libs\expat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\expat\xmlrole.h">
+      <Filter>libs\expat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\expat\xmltok.h">
+      <Filter>libs\expat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\expat\xmltok_impl.h">
+      <Filter>libs\expat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\video\camera.h">
+      <Filter>video</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\video\console.h">
+      <Filter>video</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\video\font.h">
+      <Filter>video</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\video\heightmap.h">
+      <Filter>video</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\video\model.h">
+      <Filter>video</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\video\png.h">
+      <Filter>video</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\video\shader.h">
+      <Filter>video</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\video\texture.h">
+      <Filter>video</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\video\video.h">
+      <Filter>video</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\input.h" />
+    <ClInclude Include="..\src\interface.h" />
+    <ClInclude Include="..\src\level.h" />
+    <ClInclude Include="..\src\log.h" />
+    <ClInclude Include="..\src\quaternion.h" />
+    <ClInclude Include="..\src\resourcehandler.h" />
+    <ClInclude Include="..\src\socket.h" />
+    <ClInclude Include="..\src\timer.h" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="base">
+      <UniqueIdentifier>{36b9b9e3-36e0-4190-a3b0-d858e828f1e4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\gamesrc\client.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gamesrc\factory.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gamesrc\global.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gamesrc\server.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gamesrc\world.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gamesrc\gameclient.cpp" />
+    <ClCompile Include="..\gamesrc\gameserver.cpp" />
+    <ClCompile Include="..\gamesrc\gunshot.cpp" />
+    <ClCompile Include="..\gamesrc\spaceship.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\gamesrc\client.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gamesrc\clientsideobject.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gamesrc\factory.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gamesrc\global.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gamesrc\server.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gamesrc\world.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gamesrc\gameclient.h" />
+    <ClInclude Include="..\gamesrc\gameserver.h" />
+    <ClInclude Include="..\gamesrc\gunshot.h" />
+    <ClInclude Include="..\gamesrc\spaceship.h" />
+  </ItemGroup>
+</Project>

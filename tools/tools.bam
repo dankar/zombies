@@ -1,0 +1,7 @@
+settings = NewSettings()
+
+terr = Collect("terrain/*.cpp")
+terrobj = Compile(settings, terr)
+terrexe = Link(settings, "terrain_gen", terrobj)
+
+Target(terrexe)

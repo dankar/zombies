@@ -1,0 +1,18 @@
+<entities>
+	<entity type="playerStart" displayname="Player start">
+		<size x="1" y="1" />
+		<input name="blabla" />
+		<output name="tjosan" />
+	</entity>
+	<entity type="MachineGunPickup" displayname="Machinegun pickup">
+		<size x="2" y="2" />
+		<input name="pickup" />
+	</entity>
+
+	<entity type="DoorTrigger" displayname="Door trigger">
+		<size x="10" y="10" />
+		<input name="push" />
+		<output name="door1" />
+		<output name="door2" />
+	</entity>
+</entities>

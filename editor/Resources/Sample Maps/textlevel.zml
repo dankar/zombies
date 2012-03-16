@@ -1,0 +1,58 @@
+<level name="" author="" email="" datemodified="">
+   <material name="Specular black" type="SpecularBlack">
+      <color r="255" g="255" b="255" a="255" />
+      <specular r="255" g="255" b="255" s="0" />
+      <diffuse r="255" g="255" b="255" />
+      <emissive r="255" g="255" b="255" />
+      <texture file="textur.png" />
+   </material>
+   <block name="Floor" material="Specular black">
+      <size x="28" y="-1" z="15" />
+      <position x="-14" y="1" z="-8" />
+   </material>
+   <block name="LeftWall" material="Specular black">
+      <size x="1" y="7" z="-17" />
+      <position x="-15" y="0" z="8" />
+   </material>
+   <block name="FrontWall" material="Specular black">
+      <size x="28" y="7" z="1" />
+      <position x="-14" y="0" z="-9" />
+   </material>
+   <block name="RightWall" material="Specular black">
+      <size x="1" y="7" z="17" />
+      <position x="14" y="0" z="-9" />
+   </material>
+   <block name="BackWall" material="Specular black">
+      <size x="28" y="7" z="-1" />
+      <position x="-14" y="0" z="8" />
+   </material>
+   <block name="Center raise" material="Specular black">
+      <size x="21" y="1" z="-9" />
+      <position x="-10" y="1" z="4" />
+   </material>
+   <block name="Flyting Roof" material="Specular black">
+      <size x="44" y="1" z="27" />
+      <position x="-22" y="13" z="-14" />
+   </material>
+   <block name="Block11" material="">
+      <size x="0" y="1" z="0" />
+      <position x="7" y="0" z="0" />
+   </material>
+   <block name="Center High Raise" material="Specular black">
+      <size x="13" y="-2" z="3" />
+      <position x="-6" y="4" z="-2" />
+   </material>
+   <item name="Item1" type="playerStart">
+      <position x="-12" y="2" z="5" />
+   </material>
+   <item name="Item2" type="MachineGunPickup">
+      <position x="12" y="2" z="3" />
+   </material>
+   <item name="Item3" type="playerStart">
+      <position x="-12" y="2" z="-6" />
+   </material>
+   <item name="Item4" type="MachineGunPickup">
+      <position x="12" y="2" z="-4" />
+   </material>
+</level>
+

@@ -1,0 +1,214 @@
+texture <- gfxLoadTexturePNG("crate.png");
+mesh <- gfxLoadMesh("crate.obj");
+
+barrel <- gfxLoadMesh("cylinder.obj");
+barreltexture <- gfxLoadTexturePNG("cylinder.png");
+
+startex <- gfxLoadTexturePNG("star.png");
+
+class CProjectile extends CEntity
+{
+	classname = "CProjectile";
+	
+	</ pack="float" transform="lerp" /> x = 0;
+	</ pack="float" transform="lerp" /> y = 0;
+	</ pack="float" transform="lerp" /> z = 0;
+	</ pack="float" /> starttime = 0;
+	
+	dx = 0;
+	dy = 0;
+	dz = 0;
+	
+	life = 100;
+	owner = 0;
+	
+	damage = 20;
+	
+	function Tick()
+	{
+		life-=1;
+		
+		if(!life)
+			World.RemoveEntity(this);
+			
+		x+=dx;
+		y+=dy;
+		z+=dz;
+		
+		foreach(object in World.Entities)
+		{
+			if(object instanceof CSpaceShip && dist(x, y, z, object.x, object.y, object.z) < 2.0)
+			{
+				object.Hit(20);
+				World.RemoveEntity(this);
+			}
+		}
+			
+	}
+	
+	function Render()
+	{
+		gfxSetColor(1.0, 0.0, 0.0, 1.0);
+		gfxBindTexture(startex);
+		
+		gfxDrawSprite3D(x, y, z, 1.0);
+	}
+}
+		
+	
+	
+
+class CSpaceShip extends CEntity
+{
+	classname = "CSpaceShip";
+	
+	mesh = 0;
+	
+	</ pack="float" transform="lerp" /> x = 0;
+	</ pack="float" transform="lerp" /> y = 0;
+	</ pack="float" transform="lerp" /> z = 0;
+	
+	</ pack="float" transform="lerp" /> look_x = 0;
+	</ pack="float" transform="lerp" /> look_y = 0;
+	</ pack="float" transform="lerp" /> look_z = -1;
+	
+	</ pack="float" transform="lerp" /> up_x = 0;
+	</ pack="float" transform="lerp" /> up_y = 1;
+	</ pack="float" transform="lerp" /> up_z = 0;
+	
+	speed = 0;
+	sidespeed = 0;
+
+	</ pack="float" transform="lerp" /> rotation_x = 0;
+	</ pack="float" transform="lerp" /> rotation_y = 0;
+	
+	last_rotation_x = 0;
+	last_rotation_y = 0;
+	
+	</ pack="float" transform="lerp" /> mouse_x = 0;
+	</ pack="float" transform="lerp" /> mouse_y = 0;
+	
+	</ pack="float" transform="lerp" /> health = 100;
+	
+	input_updown = 0;
+	input_sides = 0;
+	input_fire = 0;
+	
+	reload = 0;
+	
+	constructor()
+	{
+		CEntity.constructor();
+	}
+	
+	function Hit(damage)
+	{
+		health -= damage;
+		
+		if(health <= 0)
+		{
+			x = random()*500 - 250;
+			y = random()*500 - 250;
+			z = random()*500 - 250;
+			dx = 0;
+			dy = 0;
+			dz = 0;
+			
+			health = 100;
+		}
+	}
+
+	function Render()
+	{
+		if(id != gClientID)
+		{
+			gfxSetColor(1, 1, 1, 1);
+	
+			gfxPushMatrix();
+	
+			gfxTranslate(x, y, z);
+	
+			/*gfxRotate(-rotation_x/300.0 * 57.29577, 0.0, 1.0, 0.0);
+			gfxRotate(-rotation_y/300.0 * 57.29577, 1.0, 0.0, 0.0);*/
+				
+			gfxDrawMesh(mesh, texture);
+	
+			gfxPopMatrix();
+		}
+		else // istället ritar vi ut lite info
+		{
+			gfxDrawText(10.0, 300.0, "x: " + x);
+			gfxDrawText(10.0, 315.0, "y: " + y);
+			gfxDrawText(10.0, 330.0, "z: " + z);
+			gfxDrawText(10.0, 345.0, "health: " + health);
+			
+			gfxBindTexture(0);
+			gfxBeginQuads();
+			gfxDrawQuad(400.0 + (mouse_x - rotation_x), 300.0 - (mouse_y - rotation_y), 10, 10);
+			gfxEndQuads();
+		}
+	}
+
+	function Tick()
+	{
+		local dx, dy, dz;
+		
+		rotation_x += (mouse_x - rotation_x) / 5.0;
+		rotation_y += (mouse_y - rotation_y) / 5.0;
+		
+		local look = vec3(look_x, look_y, look_z);
+		local up = vec3(up_x, up_y, up_z);
+		local side;
+		
+		side = up.Rotate(90, look.x, look.y, look.z);
+		
+		look = look.Rotate((rotation_y - last_rotation_y)/5.0, side.x, side.y, side.z);
+		up = up.Rotate((rotation_y - last_rotation_y)/5.0, side.x, side.y, side.z);
+		
+		up = up.Rotate((rotation_x - last_rotation_x)/5.0, look.x, look.y, look.z);
+		
+		look_x = look.x; look_y = look.y; look_z = look.z;
+		up_x = up.x; up_y = up.y; up_z = up.z;
+			
+				
+		speed += input_updown / 5.0;
+		sidespeed += input_sides / 5.0;
+		
+		speed *= 0.9;
+		sidespeed *= 0.9;
+			
+		x += speed * look_x;
+		y += speed * look_y;
+		z += speed * look_z;
+		
+		if(reload)
+		{
+			reload-=1;
+		}
+		else if(input_fire)
+		{
+			local projectile = CProjectile();
+			
+			World.AddEntity(projectile);
+			projectile.owner = id;
+			projectile.x = x + look_x * 2;
+			projectile.y = y + look_y * 2;
+			projectile.z = z + look_z * 2;
+			
+			projectile.dx = look_x * 4;
+			projectile.dy = look_y * 4;
+			projectile.dz = look_z * 4;
+			
+			reload = 5;
+		}
+		
+		last_rotation_x = rotation_x;
+		last_rotation_y = rotation_y;
+
+	}
+
+	function Camera()
+	{
+		gfxLookAt(x, y, z, x+look_x, y+look_y, z+look_z, up_x, up_y, up_z);
+	}
+};

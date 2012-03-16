@@ -1,0 +1,5 @@
+#ifndef _CLIENTSIDEOBJECT_H_
+#define _CLIENTSIDEOBJECT_H_
+
+
+#endif

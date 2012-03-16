@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GPME!</name>
+    </assembly>
+    <members>
+        <member name="P:Map_Editor.MapEditor.Default">
+            <summary>
+            Added by the VB.Net to C# Converter to support default instance behavour in C#
+            </summary>
+        </member>
+        <member name="F:Map_Editor.dlgAbout.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Map_Editor.dlgAbout.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Map_Editor.dlgAbout.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:Map_Editor.StartSplash.Default">
+            <summary>
+            Added by the VB.Net to C# Converter to support default instance behavour in C#
+            </summary>
+        </member>
+        <member name="T:My.Resources.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:My.Resources.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:My.Resources.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+    </members>
+</doc>

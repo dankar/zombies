@@ -1,0 +1,108 @@
+include("base.script");
+include("objects.script");
+
+World <- CWorld();
+
+
+
+class TestServer extends CServer
+{
+	function Init()
+	{
+		Server.SetClientObjectClass(CSpaceShip);
+	}
+
+	function UnpackInput(client_id)
+	{
+		local obj = ::Server.GetClientObject(client_id);
+		
+		obj.input_updown = netUnpackInt();
+		obj.input_sides = netUnpackInt();
+		
+
+		obj.mouse_x = netUnpackInt();
+		obj.mouse_y = netUnpackInt();
+		
+		obj.input_fire = netUnpackInt();
+	}
+}
+
+Server <- TestServer();
+
+class CStar
+{
+	x = 0;
+	y = 0;
+	z = 0;
+	
+	constructor()
+	{
+		x = (random() * 500 - 100);
+		y = (random() * 500 - 100);
+		z = (random() * 500 - 100);
+	}
+}
+
+class CStarField extends CClientSideObject
+{
+	Stars = [];
+	
+	constructor()
+	{
+		for(local a = 0; a < 100; a+=1)
+		{
+			local star = CStar();
+			Stars.append(star);
+		}
+	}
+	
+	function Render()
+	{
+		gfxSetColor(1, 1, 1, 1);
+		
+		gfxBindTexture(startex);
+		
+		//gfxBeginQuads();
+		
+		foreach(star in Stars)
+		{	
+			gfxDrawSprite3D(star.x, star.y, star.z, 1.0);
+		}
+		
+		//gfxEndQuads();
+	}
+};
+
+class TestClient extends CClient
+{
+	function Init()
+	{
+		CClient.Init();
+		CClient.AddClientObject(CStarField());
+	}
+
+	function Update()
+	{
+
+	}
+
+	function PackInput()
+	{
+		local updown = 0;
+		local sides = 0;
+		if(inputKey("w")) updown += 1;
+		if(inputKey("s")) updown -= 1;
+		if(inputKey("a")) sides += 1;
+		if(inputKey("d")) sides -= 1;
+		
+		netPackInt(updown);
+		netPackInt(sides);
+
+		netPackInt(inputGetMouseX());
+		netPackInt(-inputGetMouseY());
+		
+		netPackInt(inputGetMouseButton(0));
+	}
+}
+
+Client <- TestClient();

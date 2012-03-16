@@ -1,0 +1,80 @@
+﻿ToDo
+
+
+
+[ ] TSV export
+[ ] Det finns alltid ytterligare rum för optimering =)
+[ ] Lågprio: Fixa så att valt objekt är förvalt i comboboxen
+[ ] Levelinfo exporteras ej (skapas exportern innan objektet skapas?=fel objektreferens)
+[ ] Centrera vy och återställ zoom när man väljer nytt eller öppna
+[ ] Spara objekten i första tillgängliga lager
+[ ] Lägga till normalmap i material
+[ ] Man kan inte spara ett material som samma namn
+
+------------------------------------------------------------------------------------
+IsDone
+
+[X] 2009-08-19 Spara
+[X] 2009-08-19 Öppna
+[X] 2009-08-19 Går inte att markera block med bredd/höjd 1
+[X] 2009-08-19 Markera resizesidan med annan färg
+[X] 2009-08-19 Finns inga block så failar hela skiten när man klickar i ytan
+[X] 2009-08-19 Uppdatera blockvyn när man flyttar (skiter i denna, det var bra som det var)
+[X] 2009-08-19 Uppdatera tempvyn när man resizat klart
+[X] 2009-08-19 Kolla så att inte block/temp uppdateras för ofta när man flyttar/resizar
+[X] 2009-08-19 OPTIMERA MERA! (Tog bort onödigta vyuppdateringar m.m.m.m.)
+[X] 2009-08-19 Se till så att bara det aktiva blocket markeras när man markerar där det finns flera block
+[X] 2009-08-19 Ta bort block med Del
+[X] 2009-08-19 Välja aktivt block med Mittenmusknappen
+[X] 2009-08-19 Fråga om att spara om man har något öppet
+[X] 2009-08-19 Klickar man i en annan vy än där man markerade så blir det alltid fel som moddas
+[X] 2009-08-19 About ...
+[ ] 2009-08-19 Lägga till funktionalitet för items
+	[X] 2009-08-19 Flytta
+	[X] 2009-08-19 Ta bort
+	[X] 2009-08-19 Lägga till
+	[X] 2009-08-20 Text i toolbaren (Överflödig, propertygrid löste detta)
+[X] 2009-08-19 Kopiera upp eventsen för vyerna, igen ............ suck.....
+[X] 2009-08-20 Items sparas och laddas inte
+[X] 2009-08-20 Texten i toolbaren är fel för de olika vyerna "Front,front,front"
+[X] 2009-08-20 Kolla så att alla resources (knappar typ) är inkluderade på rätt sätt... (Fixt!)
+[X] 2009-08-20 FileNew() Rensar inte items
+[X] 2009-08-20 Popupform (CTRL+P) för inställningar av block och items(Gjorde propertygrid istället)
+[X] 2009-08-20 Den första kommer inte med när man väljer med mmb
+[X] 2009-08-20 Temp och Item surface uppdateras inte när man zoomar
+[X] 2009-08-20 Ge alla blocks och items ett unikt namn när de skapas
+[X] 2009-08-20 Propertygrid måste nollas om man väljer ny eller öppnar en fil
+[X] 2009-08-20 Det blir fel när man har en markerad och klickar på den igen ibland
+	(om det finns annat över)
+	(tar alltid det första alternativet om man inte resizar)
+[X] 2009-08-20 Blyga ner färgen på griden och centerlinjerna
+[X] 2009-08-21 Ska items och Entities läsas in från en lista kanske?
+[X] 2009-08-21 Importera material
+[X] 2009-08-21 Visa alla material i propertygriden för block
+[X] 2009-08-21 Välja objekt i comboboxen
+[X] 2009-08-21 Tempytan flimrar när man skapar nytt block
+[X] 2009-08-21 Skapa funktion selectobjectfromname
+[X] 2009-08-21 Bugg som gör att rätt objekt inte alltid väljs om man vält mellan flera på samma plats i XZ och ZY vyerna
+[X] 2009-08-21 Uppdatera items efter man flyttat en
+[X] 2009-08-21 Lägga till levelinfo i filesave och fileopen
+[X] 2009-08-21 Levelinfo ska nollas vid ny fil/öppna
+[X] 2009-08-21 Exportfunktion
+	[X] 2009-08-21 XML
+[X] 2009-08-22 Öka på gridzisen (samt göra det inställbart i en settings xml)
+[X] 2009-08-22 3d vy av banan
+[X] 2009-08-22 Göra klart layers skiten
+[X] 2009-08-23 3d navigering i 3d vyn
+[X] 2009-08-23 Vyerna resizas inte med varandra
+[X] 2009-08-23 Kolla varför det går sjukt segt att välja lager (och andra properties). Det var för att 3drutan tog 90%
+[X] 2009-08-23 Materialeditor
+[X] 2009-08-24 Byta namn på material kollar inte så att det är unikt
+[X] 2009-08-24 Byta materialnamn på alla material när man byter namn i editorn
+[X] 2009-08-24 Specular exporteras till rgbs
+[X] 2009-08-24 Slutade 2dvyerna uppdateras när man moddade och grejade?
+[X] 2009-08-24 Slutar forfarande att uppdatera om man meckar för mycket med materialen
+[X] 2009-08-24 Blocknumreringen börjar om efter 50 ?
+[X] 2009-08-24 Visa materialet i 3dvyn
+[X] 2009-08-24 Exportera med material och använd befintliga som "Standardmaterial" när man skapar ny fil
+[X] 2009-08-24 Läs om materialen när man skapar ny fil
+[X] 2009-08-25 Byt ut komma till punkt i export
+[X] 2009-08-25 Lägg  till global ambient light
