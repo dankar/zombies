@@ -10,7 +10,9 @@
 #include "resourcehandler.h"
 #include "video/video.h"
 #include "input.h"
+#ifdef WIN32
 #include <winsock2.h>
+#endif
 #include "log.h"
 #include "timer.h"
 #include "video/font.h"
@@ -166,18 +168,21 @@ int netGetPackPosition()
 
 int netInit()
 {
+#ifdef WIN32
 	WSADATA wsaData;
 
 	if (WSAStartup(MAKEWORD(1, 1), &wsaData) != 0)
 		return false;
-
+#endif
 	snapshot.tick = 0;
 	return 1;
 }
 
 int netStop()
 {
+#ifdef WIN32
 	WSACleanup();
+#endif
 	return 1;
 }
 

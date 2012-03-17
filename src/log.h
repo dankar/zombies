@@ -3,7 +3,7 @@
 
 #include <fstream>
 
-#define LOGG(x) CLog::Get().Write(APP_LOG, LOG_INFO, x);
+#define LOGG(x, ...) CLog::Get().Write(APP_LOG, LOG_INFO, x, ...);
 
 const int APP_LOG = 0x01;
 const int PROFILE_LOG = 0x08;

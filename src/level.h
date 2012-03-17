@@ -4,7 +4,7 @@
 #include <list>
 #include <string>
 #include <map>
-#include <scew.h>
+#include <scew/scew.h>
 #include "math/vector.h"
 #include <vector>
 using std::list;

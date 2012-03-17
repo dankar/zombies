@@ -1,2 +1,15 @@
 Zombies!
 
+Linux deps:
+
+* libgl1-mesa-dev
+* libexpat1-dev
+* libglfw-dev
+* scew
+* libpng12-dev
+* libglew1.5-dev
+* libzlib-dev
+* libode-dev
+* libxxf86vm-dev
+* zlibc
+

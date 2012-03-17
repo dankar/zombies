@@ -2,7 +2,7 @@
 #define _RESOURCEHANDLER_H_
 
 #include "level.h"
-#include "types.h"
+//#include "types.h"
 #include <expat.h>
 
 #pragma warning(disable : 4311)

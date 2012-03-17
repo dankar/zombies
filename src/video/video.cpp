@@ -1,6 +1,6 @@
-#include <gl/glew.h>
-#include <gl/glfw.h>
-#include <gl/glu.h>
+#include <GL/glew.h>
+#include <GL/glfw.h>
+#include <GL/glu.h>
 #include "video.h"
 #include "../log.h"
 

@@ -1,11 +1,16 @@
-#include <gl/glfw.h>
+#include <GL/glfw.h>
 #include <vector>
-#include <squirrel.h>
 #include "socket.h"
 #include "log.h"
 #include "interface.h"
 #include "timer.h"
 #include <zlib.h>
+#ifndef WIN32
+#include <unistd.h>
+#include <fcntl.h>
+#include <netdb.h>
+#include <errno.h>
+#endif
 
 int inline CompressPacket(char* packet, int len)
 {
@@ -29,8 +34,11 @@ int GetSock()
 {
 	unsigned long okay = 1;
 	int sock = socket(AF_INET, SOCK_DGRAM, 0);
-
+#ifdef WIN32
 	ioctlsocket(sock, FIONBIO, &okay);
+#else
+	fcntl(sock, F_SETFL, O_NONBLOCK);
+#endif
 
 	return sock;
 }
@@ -240,10 +248,10 @@ int CSocketServer::Pump()
     
 	while(messagelen != 0)
 	{
-		if((messagelen = recvfrom(m_Sock, buffer, 4096, 0, (sockaddr*)&from, &fromlen)) <= 0)
+		if((messagelen = recvfrom(m_Sock, buffer, 4096, 0, (sockaddr*)&from, (socklen_t*)&fromlen)) <= 0)
 		{
 
-
+#ifdef WIN32
 			int last = WSAGetLastError();
 			if(last == WSAECONNRESET)
 			{
@@ -258,6 +266,14 @@ int CSocketServer::Pump()
 			{
 				CLog::Get().Write(APP_LOG, LOG_WARNING, "Something is very wrong with the network code :(");
 			}
+#else
+			if(errno == EWOULDBLOCK)
+			{
+				break;
+			}
+			CLog::Get().Write(APP_LOG, LOG_INFO, "Connection lost to %s:%d", inet_ntoa(from.sin_addr), from.sin_port);
+			HandleDisconnect(from);
+#endif
 		}
 		else
 		{
@@ -374,7 +390,7 @@ int CSocketServer::Listen(int port)
 
 	if(!StartServer(port))
 	{
-		LOGG("Server could not listen on port %d", port);
+		CLog::Get().Write(APP_LOG, LOG_ERROR, "Server could not listen on port %d", port);
 		return 0;
 	}
 
@@ -550,15 +566,23 @@ int CSocketClient::Tick()
 
 		while(1)
 		{
-			if((messagelen = recvfrom(m_Sock, buffer, 4096, 0, (sockaddr*)&from, &fromlen)) <= 0)
+			if((messagelen = recvfrom(m_Sock, buffer, 4096, 0, (sockaddr*)&from, (socklen_t*)&fromlen)) <= 0)
 			{
+#ifdef WIN32
 				int error = WSAGetLastError();
 
 				if(error != WSAEWOULDBLOCK)
 				{
 					Disconnect();
 				}
+#else
+				if(errno != EWOULDBLOCK)
+				{
+					Disconnect();
+				}
+#endif
 				break;
+
 			}
 			else
 			{
@@ -661,7 +685,7 @@ int CSocketClient::Disconnect()
 
 	Connected = 0;
 
-	closesocket(m_Sock);
+	close(m_Sock);
 
 	CLog::Get().Write(APP_LOG, LOG_ERROR, "Lost connection to server");
 

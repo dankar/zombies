@@ -2,9 +2,11 @@
 #include "global.h"
 
 #include "gunshot.h"
-#include <../include/GL/glfw.h>
+#include <GL/glfw.h>
 #include "../src/math/vector.h"
 #include <cmath>
+#include <cstdio>
+#include <cstdlib>
 #include "spaceship.h"
 
 

@@ -1,4 +1,4 @@
-#include <gl/glfw.h>
+#include <GL/glfw.h>
 #include "input.h"
 #include <cstring>
 #include <cstdio>

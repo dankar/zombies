@@ -1,5 +1,6 @@
 #include "level.h"
-#include <scew.h>
+#include <scew/scew.h>
+#include <scew/attribute.h>
 #include <GL/glew.h>
 #include <GL/glfw.h>
 #include "log.h"
@@ -551,9 +552,9 @@ void CLevel::ClearAlphaBuffer()
 int CLevel::ReadItem(scew_element* item)
 {
 	item_t it;
-
-	it.name = scew_attribute_value(scew_attribute_by_name(item, "name"));
-	it.type = scew_attribute_value(scew_attribute_by_name(item, "type"));
+	
+	it.name = scew_attribute_value(scew_element_attribute_by_name(item, "name"));
+	it.type = scew_attribute_value(scew_element_attribute_by_name(item, "type"));
 
 	ReadXYZ(scew_element_by_name(item, "position"), &it.position);
 
@@ -572,8 +573,8 @@ int CLevel::ReadBlock(scew_element* block)
 
 	block_t blo;
 
-	blo.name = scew_attribute_value(scew_attribute_by_name(block, "name"));
-	mat = scew_attribute_value(scew_attribute_by_name(block, "material"));
+	blo.name = scew_attribute_value(scew_element_attribute_by_name(block, "name"));
+	mat = scew_attribute_value(scew_element_attribute_by_name(block, "material"));
 	blo.material = &mMaterials[mat];
 
 	ReadXYZ(scew_element_by_name(block, "position"), &blo.position);
@@ -591,9 +592,9 @@ int CLevel::ReadBlock(scew_element* block)
 
 int CLevel::ReadXYZ(scew_element* el, Vec3* vec)
 {
-	vec->x = 10.0f*atof(scew_attribute_value(scew_attribute_by_name(el, "x")));
-	vec->y = 10.0f*atof(scew_attribute_value(scew_attribute_by_name(el, "z")));
-	vec->z = 10.0f*atof(scew_attribute_value(scew_attribute_by_name(el, "y")));
+	vec->x = 10.0f*atof(scew_attribute_value(scew_element_attribute_by_name(el, "x")));
+	vec->y = 10.0f*atof(scew_attribute_value(scew_element_attribute_by_name(el, "z")));
+	vec->z = 10.0f*atof(scew_attribute_value(scew_element_attribute_by_name(el, "y")));
 	return 1;
 }
 
@@ -644,6 +645,7 @@ int CLevel::RemoveFlashlight(int id)
 int CLevel::ReadLevel(scew_element* level)
 {
 	scew_element* el;
+	scew_list *child_list = NULL;
 	if(strcmp(scew_element_name(level), "level") != 0)
 	{
 		CLog::Get().Write(APP_LOG, LOG_ERROR, "XML should contain level-element.");
@@ -651,10 +653,11 @@ int CLevel::ReadLevel(scew_element* level)
 	}
 
 	// Get first child
-	el = scew_element_next(level, 0);
+	child_list = scew_element_children(level);
 
 	do
 	{
+			el = (scew_element*)scew_list_data(child_list);
 		if(strcmp(scew_element_name(el), "material") == 0)
 		{
 			if(!ReadMaterial(el))
@@ -675,7 +678,7 @@ int CLevel::ReadLevel(scew_element* level)
 			CLog::Get().Write(APP_LOG, LOG_ERROR, "Unknown XML element: %s", scew_element_name(el));
 			return 0;
 		}
-	}while(el = scew_element_next(0, el));
+	}while(child_list = scew_list_next(child_list));
 
 	light_t light1;
 	light_t light2;
@@ -705,10 +708,10 @@ int CLevel::ReadLevel(scew_element* level)
 
 int CLevel::ReadRGBA(scew_element* el, float rgba[4])
 {
-	rgba[0] = atof(scew_attribute_value(scew_attribute_by_name(el, "r")));
-	rgba[1] = atof(scew_attribute_value(scew_attribute_by_name(el, "g")));
-	rgba[2] = atof(scew_attribute_value(scew_attribute_by_name(el, "b")));
-	rgba[3] = atof(scew_attribute_value(scew_attribute_by_name(el, "a")));
+	rgba[0] = atof(scew_attribute_value(scew_element_attribute_by_name(el, "r")));
+	rgba[1] = atof(scew_attribute_value(scew_element_attribute_by_name(el, "g")));
+	rgba[2] = atof(scew_attribute_value(scew_element_attribute_by_name(el, "b")));
+	rgba[3] = atof(scew_attribute_value(scew_element_attribute_by_name(el, "a")));
 
 	return 1;
 }
@@ -726,10 +729,10 @@ int CLevel::ReadMaterial(scew_element* material)
 	ReadRGBA(scew_element_by_name(material, "emissive"), mat.emissive);
 	ReadRGBA(scew_element_by_name(material, "specular"), mat.specular);
 
-	mat.name = scew_attribute_value(scew_attribute_by_name(material, "name"));
-	mat.type = scew_attribute_value(scew_attribute_by_name(material, "type"));
+	mat.name = scew_attribute_value(scew_element_attribute_by_name(material, "name"));
+	mat.type = scew_attribute_value(scew_element_attribute_by_name(material, "type"));
 
-	mat.shininess = atof(scew_attribute_value(scew_attribute_by_name(scew_element_by_name(material, "shininess"), "value")));
+	mat.shininess = atof(scew_attribute_value(scew_element_attribute_by_name(scew_element_by_name(material, "shininess"), "value")));
 
 	mMaterials[mat.name] = mat;
 
@@ -746,7 +749,7 @@ int CLevel::ReadXML(const char* filename)
 
 	parser = scew_parser_create();
 
-	if(!scew_parser_load_file(parser, filename))
+	/*if(!scew_parser_load_file(parser, filename))
 	{	
 		scew_parser_free(parser);
 		return 0;
@@ -760,7 +763,7 @@ int CLevel::ReadXML(const char* filename)
 		result = 0;
 	}
 
-	scew_tree_free(tree);
+	scew_tree_free(tree);*/
 
 	scew_parser_free(parser);
 

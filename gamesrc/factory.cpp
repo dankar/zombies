@@ -5,6 +5,7 @@ using std::list;
 #include "factory.h"
 #include "spaceship.h"
 #include "gunshot.h"
+#include <cstring>
 
 CEntity* CreateEntity(const char* classname)
 {

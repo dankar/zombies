@@ -1,7 +1,16 @@
 #ifndef _SOCKET_H_
 #define _SOCKET_H_
 
+#ifdef WIN32
 #include <winsock.h>
+#else
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <arpa/inet.h>
+typedef int SOCKET;
+#endif
+#include <cstdio>
+#include <cstring>
 #include <map>
 #include "interface.h"
 

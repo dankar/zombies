@@ -1,4 +1,4 @@
-#include <gl/glfw.h>
+#include <GL/glfw.h>
 #include <vector>
 #include <string>
 using namespace std;

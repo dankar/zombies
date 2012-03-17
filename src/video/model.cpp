@@ -10,6 +10,8 @@
 #include "../log.h"
 #include <cassert>
 #include "../interface.h"
+#include <cmath>
+#include <cstdlib>
 
 using namespace std;
 

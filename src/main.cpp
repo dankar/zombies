@@ -1,7 +1,6 @@
 #include <GL/glew.h>
 #include <GL/glfw.h>
 #include <cstdio>
-#include <squirrel.h>
 #include "timer.h"
 #include <vector>
 #include <string>
@@ -13,6 +12,9 @@ using namespace std;
 #include "interface.h"
 #include "socket.h"
 #include "video/video.h"
+#ifndef WIN32
+#include <sched.h>
+#endif
 
 int main(int argc, char* argv[])
 {
@@ -115,7 +117,11 @@ int main(int argc, char* argv[])
 		inpUpdate();
 
 		glfwSwapBuffers();
+#ifdef WIN32
 		Sleep(1);
+#else
+		sched_yield();
+#endif
 	}
 
 	client.Disconnect();

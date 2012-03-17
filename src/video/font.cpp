@@ -2,7 +2,7 @@
 #include "font.h"
 #include <cstdio>
 #include <cstdarg>
-#include <gl/glfw.h>
+#include <GL/glfw.h>
 #include <string.h>
 #include <map>
 #include <string>
